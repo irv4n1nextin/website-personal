@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Me - Irfan Aflah</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #0d1117;
+      color: #ddd;
+      padding: 40px;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    header {
+      margin-bottom: 30px;
+      text-align: center;
+      animation: fadeSlideIn 1s forwards;
+      animation-delay: 0.2s;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #3ea6ff;
+      font-weight: 700;
+      margin: 0;
+      display: inline-block;
+      animation: waveMove 2s ease-in-out infinite;
+    }
+
+    section {
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+      font-size: 1.1rem;
+      color: #ccc;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeSlideIn 1s forwards;
+      animation-delay: 0.6s;
+    }
+
+    section p {
+      margin-bottom: 20px;
+    }
+
+    a.back-link, a.next-link {
+      position: fixed;
+      padding: 10px 20px;
+      border: 2px solid #3ea6ff;
+      color: #3ea6ff;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      z-index: 1000;
+      opacity: 0;
+      animation: fadeSlideIn 1s forwards;
+    }
+
+    a.back-link {
+      bottom: 20px;
+      left: 20px;
+      animation-delay: 1s;
+    }
+
+    a.next-link {
+      bottom: 20px;
+      right: 20px;
+      animation-delay: 1s;
+    }
+
+    a.back-link:hover, a.next-link:hover {
+      background-color: #3ea6ff;
+      color: #0d1117;
+    }
+
+    @keyframes fadeSlideIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes waveMove {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      25% {
+        transform: translateY(-8px);
+      }
+      50% {
+        transform: translateY(4px);
+      }
+      75% {
+        transform: translateY(-4px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>About Me</h1>
+  </header>
+  <section>
+    <p>Halo semuanya,<br />Aku Irfan, dan ini adalah kisahku.</p>
+    <p>
+      Umurku saat ini adalah 25 tahun, dan menurutku di usia segini sudah telat untuk berkuliah, 
+      tapi ada satu hal yang mengubah pandangan ku yaitu "Kesuksesan".
+      Kesuksesan setiap orang bukan tergantung pada usia tetapi pada kerja keras dan semangat dari orang itu sendiri.
+      Hanya ada satu fokus di hidupku saat ini, yaitu menunjukan kesuksesan kepada orang tua dan adik-adik saya.
+    </p>
+    <p>
+      Saat ini aku sudah berada di Semester 2 prodi Sistem Komputer. Awalnya ketika masuk semester 2 aku sudah merasa
+      kalau salah jurusan, yang dimana sejak awal ingin fokus di web developer atau app developer.
+      Tapi mengingat semua yang sudah berjalan, mulai dari berangkat kuliah hujan-hujanan dan bayaran pakai duit sendiri,
+      jadi aku berpikir untuk tetap melanjutkan di jurusan sekarang.
+    </p>
+    <p>
+      Untuk bisa jadi web developer ternyata bisa walaupun bukan jurusannya, karena yang terpenting tahu fundamentalnya.
+      Sekarang aku sudah membuktikan bahwa ternyata bisa bikin website sendiri, hehe.
+      Aku merasa bangga karena bisa membuat website sendiri, dan bangga bisa berkuliah tanpa gangguan dari pandangan buruk 
+      tentang usia seperti dulu.
+    </p>
+    <p>
+      Mungkin ini adalah sedikit cerita tentang saya,
+      terimakasih buat teman-teman yang sudah melihat perjalanan saya.
+    <p>
+      See u guys 😄
+    </p>
+  </section>
+  <a href="index.html" class="back-link">← Kembali ke Beranda</a>
+  <a href="biodata.html" class="next-link">Selanjutnya →</a>
+</body>
+</html>

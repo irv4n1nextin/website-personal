@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NextIn Company - Company Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #0d1117;
+      color: #ddd;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background-color: #161b22;
+      color: #3ea6ff;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 10px rgb(62 166 255 / 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      animation: slideDown 1s ease forwards;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      user-select: none;
+      color: #3ea6ff;
+    }
+    .next-button {
+      font-weight: 600;
+      color: #8ab8ff;
+      background: transparent;
+      border: 2px solid #3ea6ff;
+      padding: 8px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .next-button:hover,
+    .next-button:focus {
+      background-color: #3ea6ff;
+      color: #0d1117;
+      transform: translateY(-3px);
+      outline: none;
+    }
+    main {
+      max-width: 900px;
+      margin: 40px auto 80px;
+      padding: 0 20px;
+      flex-grow: 1;
+    }
+    h2 {
+      color: #3ea6ff;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    section {
+      margin-bottom: 50px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* About Us */
+    .about p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      color: #ccc;
+    }
+    /* Team grid */
+    .team-members {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 30px;
+    }
+    .member-card {
+      background: #161b22;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #1f2937;
+      text-align: center;
+      transition: transform 0.3s ease;
+      cursor: default;
+      border: 1px solid #3ea6ff;
+    }
+    .member-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 25px #3ea6ff;
+    }
+    .member-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin: 0 auto 15px;
+      overflow: hidden;
+      border: 3px solid #3ea6ff;
+    }
+    .member-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .member-name {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #3ea6ff;
+      margin-bottom: 6px;
+    }
+    .member-role {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #70a1ff;
+      margin-bottom: 10px;
+    }
+    .member-contact {
+      font-size: 0.95rem;
+      color: #a1c4ff;
+      user-select: text;
+    }
+    /* Contact */
+    .contact-info {
+      background: #161b22;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px #1f2937;
+      max-width: 480px;
+      font-size: 1.05rem;
+      line-height: 1.5;
+      color: #ccc;
+      border: 1px solid #3ea6ff;
+    }
+    /* Footer */
+    footer {
+      background-color: #161b22;
+      color: #8ab8ff;
+      padding: 20px 40px;
+      text-align: center;
+      box-shadow: 0 -2px 10px rgb(62 166 255 / 0.3);
+    }
+    footer .socials {
+      margin-bottom: 10px;
+    }
+    footer .socials a {
+      color: #3ea6ff;
+      margin: 0 12px;
+      font-size: 1.4rem;
+      transition: color 0.3s ease;
+      text-decoration: none;
+    }
+    footer .socials a:hover {
+      color: #70a1ff;
+    }
+    /* Tombol kembali di pojok kiri bawah */
+    .back-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      font-weight: 600;
+      color: #8ab8ff;
+      background: transparent;
+      border: 2px solid #3ea6ff;
+      padding: 8px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+      user-select: none;
+      z-index: 1000;
+    }
+    .back-button:hover,
+    .back-button:focus {
+      background-color: #3ea6ff;
+      color: #0d1117;
+      transform: translateY(-3px);
+      outline: none;
+    }
+    /* Animations */
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+      .next-button {
+        margin-top: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">NextIn Company</div>
+    <a href="experience.html" class="next-button" aria-label="Lanjut ke halaman work experience">
+      Selanjutnya <i class="fas fa-arrow-right"></i>
+    </a>
+  </header>
+
+  <main>
+    <section id="about" class="about" tabindex="0">
+      <h2>Tentang Kami</h2>
+      <p>
+        NextIn Company adalah perusahaan teknologi yang berfokus pada solusi perangkat lunak inovatif untuk meningkatkan efisiensi dan produktivitas bisnis. Kami berdedikasi untuk memberikan layanan terbaik dengan tim yang profesional dan berpengalaman.
+      </p>
+    </section>
+
+    <section id="team" class="team" tabindex="0">
+      <h2>Tim Kami</h2>
+      <div class="team-members">
+        <article class="member-card" tabindex="0" aria-label="Profil Irfan Aflah, CEO dan Founder">
+          <div class="member-photo" aria-hidden="true">
+            <img src="irfan1.jpg" alt="Foto Irfan Aflah" />
+          </div>
+          <h3 class="member-name">Irfan Aflah Maulana</h3>
+          <p class="member-role">CEO & Founder</p>
+          <p class="member-contact">irfanaflahmaulana3@gmail.com</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="contact" tabindex="0">
+      <h2>Kontak Kami</h2>
+      <div class="contact-info">
+        <p><strong>Alamat:</strong> Cluster Tevana,Maja Banten</p>
+        <p><strong>Email:</strong> irfanaflahmaulana3@gmail.com</p>
+        <p><strong>Telepon:</strong> 0838-3616-7470</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="socials" aria-label="Sosial media NextIn Company">
+      <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+    &copy; 2025 NextIn Company. All rights reserved.
+  </footer>
+
+  <!-- Tombol Kembali -->
+  <a href="index.html" class="back-button" aria-label="Kembali ke halaman utama">
+    <i class="fas fa-arrow-left"></i> Kembali
+  </a>
+
+  <script>
+    // Animasi scroll untuk fade-in dan slide-up setiap section
+    function onScrollAnimate() {
+      const sections = document.querySelectorAll('main section');
+      const triggerBottom = window.innerHeight * 0.85;
+
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < triggerBottom) {
+          section.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', onScrollAnimate);
+    window.addEventListener('load', onScrollAnimate);
+  </script>
+</body>
+</html>

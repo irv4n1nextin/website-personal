@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Education - Irfan Aflah</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #0d1117;
+      color: #ddd;
+      padding: 40px;
+      min-height: 100vh;
+      position: relative;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      animation: fadeInDown 1s ease forwards;
+    }
+    h1 {
+      font-size: 2.8rem;
+      color: #3ea6ff;
+      margin: 0;
+      animation: bounceText 2s infinite;
+    }
+    @keyframes bounceText {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .education-list {
+      max-width: 700px;
+      margin: 0 auto;
+      list-style: none;
+      padding: 0;
+    }
+    .education-item {
+      background-color: #161b22;
+      border: 1px solid #3ea6ff;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(62, 166, 255, 0.5);
+      animation: slideInLeft 0.8s ease forwards;
+      opacity: 0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .education-item:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+    .education-item:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+    .education-item:nth-child(3) {
+      animation-delay: 0.7s;
+    }
+    .education-item h2 {
+      margin: 0 0 10px 0;
+      color: #3ea6ff;
+      font-size: 1.5rem;
+    }
+    .education-item .year {
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #00d4ff;
+    }
+    .education-item p {
+      margin: 0;
+      line-height: 1.5;
+      color: #bbb;
+    }
+    .education-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px 3px #3ea6ff;
+      cursor: pointer;
+    }
+    a.back-link {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      border: 2px solid #3ea6ff;
+      color: #3ea6ff;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    a.back-link:hover {
+      background-color: #3ea6ff;
+      color: #0d1117;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Education</h1>
+  </header>
+  <main>
+    <ul class="education-list">
+      <li class="education-item">
+        <h2>Universitas Pamulang</h2>
+        <div class="year">2023 - Sekarang</div>
+        <p>Sistem Komputer, Fakultas Ilmu Komputer</p>
+      </li>
+      <li class="education-item">
+        <h2>SMK NEGERI 8 KAB.Tangerang</h2>
+        <div class="year">2015 - 2018</div>
+        <p>Jurusan TEKNIK LISTRIK</p>
+      </li>
+      <li class="education-item">
+        <h2>SMP ISLAM AL-HUSNA</h2>
+        <div class="year">2012 - 2015</div>
+        <p>Program Studi Umum</p>
+      </li>
+      <li class="education-item">
+        <h2>SD NEGERI KADONGDONG</h2>
+        <div class="year">2006 - 2012</div>
+        <p>Program Studi Umum</p>
+      </li>
+    </ul>
+  </main>
+  <a href="index.html" class="back-link">← Kembali ke Beranda</a>
+</body>
+</html>

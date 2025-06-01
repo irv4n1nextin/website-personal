@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IrfanPorto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f0f17, #0a0a14);
+      color: #e4e4e4;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      background-attachment: fixed;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 4px 4px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #121212;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      color: #00ffff;
+      font-weight: 700;
+      font-size: 1.6rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: #bbb;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #00ffff;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 100px 40px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .typed-name {
+      color: #00ffff;
+      text-shadow: 0 0 5px #00ffff;
+    }
+
+    .hero-text h2 {
+      font-size: 1.8rem;
+      color: #00ffff;
+      margin-bottom: 20px;
+      min-height: 2rem;
+    }
+
+    .hero-text p {
+      font-size: 1rem;
+      max-width: 600px;
+      line-height: 1.6;
+      color: #ccc;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 28px;
+      border: 2px solid #00ffff;
+      color: #00ffff;
+      text-decoration: none;
+      border-radius: 8px;
+      background-color: transparent;
+      transition: all 0.3s ease;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+    }
+
+    .btn:hover {
+      background-color: #00ffff;
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    .hero-img {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      justify-content: center;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .hexagon {
+      width: 320px;
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, #00f7ff, #007fff);
+      clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .hexagon img {
+      width: 95%;
+      height: 95%;
+      object-fit: cover;
+      clip-path: inherit;
+      border-radius: 10px;
+    }
+
+    .social-icons {
+      margin-top: 40px;
+      display: flex;
+      gap: 20px;
+      font-size: 1.5rem;
+    }
+
+    .social-icons a {
+      color: #00ffff;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2) rotate(5deg);
+      color: #ffffff;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    /* Contact Section */
+    #contact {
+      padding: 60px 40px;
+      text-align: center;
+      background-color: #121212;
+      margin: 60px auto 0;
+      border-radius: 10px;
+      max-width: 600px;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    }
+    #contact h2 {
+      color: #00ffff;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    #contact p {
+      color: #ccc;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+    #contact a.whatsapp-btn {
+      display: inline-block;
+      background-color: #25D366;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.6);
+      transition: background-color 0.3s ease;
+    }
+    #contact a.whatsapp-btn:hover {
+      background-color: #1ebe57;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-img {
+        margin-top: 40px;
+      }
+
+      .social-icons {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">IrfanPorto</div>
+    <nav>
+      <ul>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="biodata.html">Biodata</a></li>
+        <li><a href="experience.html">Work Experience</a></li>
+        <li><a href="skill.html">My Skills</a></li>
+        <li><a href="education.html">Education</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Hi, I'm <span class="typed-name">Irfan Aflah M</span></h1>
+      <h2><span id="dynamic-text"></span></h2>
+      <p>
+        Saya adalah seorang Mahasiswa semester 2 dari Fakultas Ilmu Komputer yang bersemangat dalam menciptakan web yang inovatif dan tangguh.
+        Dengan keahlian HTML, CSS, JavaScript, dan pengalaman dalam berbagai framework modern, saya telah mengembangkan web yang responsif dan aman.
+        Saya akan terus berkreasi dalam mengembangkan Website ini untuk kedepannya.
+      </p>
+      <a href="#contact" class="btn">Hubungi Saya</a>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/mass_van22" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/irfan-aflah-maulana-58056a179" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.youtube.com/@Irv4n_Nextin" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://github.com/irvanPorto" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <div class="hexagon">
+        <img src="irfan.png" alt="Foto Irfan">
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Hubungi Saya</h2>
+    <p>
+      Jika kamu ingin berdiskusi, bertanya, atau bekerja sama, jangan ragu untuk menghubungi saya langsung via WhatsApp.
+    </p>
+    <a href="https://wa.me/+6283836167470" target="_blank" rel="noopener" class="whatsapp-btn">
+      <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> Chat via WhatsApp
+    </a>
+  </section>
+
+  <script>
+    const words = ["Front-end Developer", "UI/UX Enthusiast", "Student at Universitas Pamulang"];
+    const dynamicText = document.getElementById("dynamic-text");
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeEffect() {
+      const currentWord = words[wordIndex];
+      const displayed = currentWord.substring(0, charIndex);
+      dynamicText.textContent = displayed;
+
+      if (!isDeleting && charIndex < currentWord.length) {
+        charIndex++;
+        setTimeout(typeEffect, 100);
+      } else if (isDeleting && charIndex > 0) {
+        charIndex--;
+        setTimeout(typeEffect, 50);
+      } else {
+        isDeleting = !isDeleting;
+        if (!isDeleting) wordIndex = (wordIndex + 1) % words.length;
+        setTimeout(typeEffect, 1200);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", typeEffect);
+  </script>
+</body>
+</html>

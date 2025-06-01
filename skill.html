@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Skills - Irfan Aflah</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #0d1117;
+      color: #ddd;
+      padding: 40px;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      animation: fadeInDown 1s ease forwards;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      color: #3ea6ff;
+      margin: 0;
+      animation: bounceText 2s infinite;
+    }
+
+    @keyframes bounceText {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .skills-container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .skill {
+      margin-bottom: 30px;
+    }
+
+    .skill-name {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: #3ea6ff;
+    }
+
+    .progress-bar {
+      background-color: #161b22;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 25px;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+    }
+
+    .progress {
+      height: 100%;
+      background: linear-gradient(90deg, #3ea6ff, #00d4ff);
+      width: 0;
+      border-radius: 10px;
+      animation: fillProgress 2s forwards;
+    }
+
+    .progress.html { animation-delay: 0.3s; }
+    .progress.css { animation-delay: 0.6s; }
+    .progress.js { animation-delay: 0.9s; }
+    .progress.react { animation-delay: 1.2s; }
+    .progress.python { animation-delay: 1.5s; }
+
+    @keyframes fillProgress {
+      to {
+        width: var(--progress-width);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Tombol navigasi */
+    a.nav-link {
+      position: fixed;
+      bottom: 20px;
+      padding: 10px 20px;
+      border: 2px solid #3ea6ff;
+      color: #3ea6ff;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    a.nav-link:hover {
+      background-color: #3ea6ff;
+      color: #0d1117;
+    }
+
+    .back-link { left: 20px; }
+    .home-link { right: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Skills</h1>
+  </header>
+
+  <section class="skills-container">
+    <div class="skill">
+      <div class="skill-name">HTML</div>
+      <div class="progress-bar">
+        <div class="progress html" style="--progress-width: 90%;"></div>
+      </div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">CSS</div>
+      <div class="progress-bar">
+        <div class="progress css" style="--progress-width: 85%;"></div>
+      </div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">JavaScript</div>
+      <div class="progress-bar">
+        <div class="progress js" style="--progress-width: 75%;"></div>
+      </div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">React</div>
+      <div class="progress-bar">
+        <div class="progress react" style="--progress-width: 65%;"></div>
+      </div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Python</div>
+      <div class="progress-bar">
+        <div class="progress python" style="--progress-width: 70%;"></div>
+      </div>
+    </div>
+  </section>
+
+  <a href="experience.html" class="nav-link back-link">← Kembali</a>
+  <a href="education.html" class="nav-link home-link">Selanjutnya →</a>
+</body>
+</html>

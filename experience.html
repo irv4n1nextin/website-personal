@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Work Experience - Company Cards</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #0d1117;
+      color: #ddd;
+      padding: 40px 20px;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      color: #3ea6ff;
+      margin: 0;
+      animation: bounceText 2s infinite;
+    }
+
+    @keyframes bounceText {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .experience-container {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      padding-left: 40px;
+    }
+
+    .experience-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 20px;
+      width: 4px;
+      height: 100%;
+      background: #3ea6ff;
+      border-radius: 2px;
+    }
+
+    .company-card {
+      background-color: #161b22;
+      border-radius: 12px;
+      margin-bottom: 40px;
+      padding: 20px 30px 20px 70px;
+      position: relative;
+      box-shadow: 0 4px 8px rgba(62, 166, 255, 0.15);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .company-card.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .company-card::before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 30px;
+      width: 24px;
+      height: 24px;
+      background: #3ea6ff;
+      border-radius: 50%;
+      border: 4px solid #0d1117;
+      box-sizing: content-box;
+      transition: background-color 0.3s ease;
+      z-index: 2;
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 10px;
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: #222832;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 8px #3ea6ffaa;
+    }
+
+    .logo img {
+      max-width: 80%;
+      max-height: 80%;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+
+    .company-card:hover::before {
+      background-color: #00d4ff;
+    }
+
+    .job-title {
+      font-size: 1.3rem;
+      color: #3ea6ff;
+      margin: 0 0 8px;
+      font-weight: 700;
+    }
+
+    .company-name {
+      font-weight: 600;
+      color: #00d4ff;
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    .date {
+      font-style: italic;
+      color: #aaa;
+      margin-bottom: 15px;
+      font-size: 0.9rem;
+    }
+
+    .description p {
+      margin: 6px 0;
+      line-height: 1.5;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    a.nav-link {
+      position: fixed;
+      bottom: 20px;
+      padding: 8px 18px;
+      border: 2px solid #3ea6ff;
+      color: #3ea6ff;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      font-size: 0.85rem;
+      z-index: 10;
+    }
+
+    a.nav-link:hover {
+      background-color: #3ea6ff;
+      color: #0d1117;
+    }
+
+    .back-link { left: 20px; }
+    .next-link { right: 20px; }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 20px 12px;
+      }
+      .experience-container {
+        padding-left: 30px;
+      }
+      .company-card {
+        padding: 16px 20px 16px 60px;
+      }
+      .logo {
+        width: 36px;
+        height: 36px;
+        top: 16px;
+        left: 8px;
+      }
+      .company-card::before {
+        width: 20px;
+        height: 20px;
+        top: 26px;
+        left: 4px;
+        border-width: 3px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Work Experience</h1>
+  </header>
+
+  <div class="experience-container">
+
+    <!-- PT Gumindo Bogamanis -->
+    <div class="company-card">
+      <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/PT_Gumindo_Bogamanis_Logo.svg/64px-PT_Gumindo_Bogamanis_Logo.svg.png" alt="PT Gumindo Bogamanis" />
+      </div>
+      <h2 class="job-title">Maintenance Utility</h2>
+      <div class="company-name">PT. Gumindo Bogamanis</div>
+      <div class="date">Jan 2023 - Saat ini</div>
+      <div class="location">Cikande,Serang Banten, Indonesia · Di lokasi</div>
+      <div class="description">
+        <p>1. Preventive dan Corrective Maintenance</p>
+        <p> - Menjadwalkan dan melakukan perawatan rutin (preventive)</p>
+        <p> - Penanganan gangguan atau kerusakan (corrective)</p>
+        <p>2. Perawatan Listrik dan Panel Distribusi</p>
+        <p> - Panel distribusi daya listrik</p>
+        <p> - Genset dan sistem backup listrik</p>
+        <p> - Pencahayaan area umum</p>
+        <p>3. Koordinasi dengan Divisi Produksi dan Safety</p>
+        <p> - Memastikan ketersediaan utilitas saat proses perbaikan</p>
+        <p> - Mendukung standar keselamatan dan lingkungan kerja</p>
+      </div>
+    </div>
+
+    <!-- PT Global Jet Cargo -->
+    <div class="company-card">
+      <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Global_Jet_Cargo_logo.svg/64px-Global_Jet_Cargo_logo.svg.png" alt="PT Global Jet Cargo" />
+      </div>
+      <h2 class="job-title">Staff Operation Gateway</h2>
+      <div class="company-name">PT. Global Jet Cargo</div>
+      <div class="date">Maret 2022 - Mei 2023</div>
+      <div class="location">Kosambi, Banten, Indonesia · Di lokasi</div>
+      <div class="description">
+        <p>1. Penerimaan dan Penyortiran Barang</p>
+        <p> - Menerima paket masuk dari berbagai agen atau cabang.</p>
+        <p> - Melakukan penyortiran barang berdasarkan tujuan pengiriman (destinasi).</p>
+        <p>2. Input dan Validasi Data</p>
+        <p> - Memindai barcode paket menggunakan sistem (scanner).</p>
+        <p> - Memastikan data pengiriman (alamat, resi, berat) akurat dan sesuai.</p>
+        <p>3. Koordinasi Pengiriman Keluar</p>
+        <p> - Menyiapkan paket untuk dikirim ke tujuan berikutnya (hub, cabang, atau langsung ke kurir).</p>
+        <p> - Berkoordinasi dengan bagian trucking, kurir, atau armada pengangkut.</p>
+        <p>4. Monitoring Pergerakan Barang</p>
+        <p> - Memantau status pengiriman barang melalui sistem.</p>
+        <p> - Menangani barang tertahan, salah kirim, atau tidak terproses.</p>
+        <p>5. Pelaporan Operasional</p>
+        <p> - Menyusun laporan harian/mingguan terkait jumlah barang masuk/keluar, kendala operasional, dan status pengiriman.</p>
+        <p>6. Menjaga Standar Prosedur dan Keamanan</p>
+        <p> - Memastikan proses kerja sesuai SOP perusahaan.</p>
+        <p> - Menjaga keamanan barang selama berada di area gateway.</p>
+      </div>
+    </div>
+
+    <!-- PT Graha Adinusa -->
+    <div class="company-card">
+      <div class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Finfleet_Logo.svg" alt="Finfleet Teknologi Indonesia" />
+  </div>
+  <h2 class="job-title">Field Operations Coordinator</h2>
+  <div class="company-name">Finfleet Teknologi Indonesia · Paruh Waktu</div>
+  <div class="date">Jul 2021 - Feb 2022 · 8 bln</div>
+  <div class="location">Kosambi, Banten, Indonesia · Di lokasi</div>
+  <div class="description">
+    <p>1. Pantau Kehadiran & Disiplin - Catat absensi, lembur, dan kedisiplinan karyawan di lapangan.</p>
+    <p>2. Koordinasi dengan Klien & Internal - Jadi penghubung antara perusahaan outsourcing dan pengguna jasa.</p>
+    <p>3. Laporan Administratif - Buat laporan kehadiran, performa, dan dokumen pendukung lainnya.</p>
+    <p>4. Awasi Kinerja Karyawan - Pastikan pekerjaan sesuai SOP dan beri arahan jika perlu.</p>
+    <p>5. Bantu Rekrut & Orientasi - Dukung proses rekrutmen dan briefing karyawan baru.</p>
+    <p>6. Urus Data Gaji & Lembur - Kumpulkan dan serahkan data untuk proses penggajian.</p>
+    <p>7. Tanggapi Komplain & Jaga Relasi - Atasi masalah lapangan dan bangun hubungan baik dengan klien.</p>
+  </div>
+  <div class="resignation">Mengundurkan diri</div>
+</div>
+
+<div class="company-card">
+  <div class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Midi_Utama_Logo.svg/64px-Midi_Utama_Logo.svg.png" alt="PT Midi Utama Indonesia" />
+  </div>
+  <h2 class="job-title">Picker</h2>
+  <div class="company-name">PT. Midi Utama Indonesia · Kontrak</div>
+  <div class="date">Des 2019 - Jun 2021 · 1 thn 7 bln</div>
+  <div class="location">Bitung, Tangerang Banten, Indonesia · Di lokasi</div>
+  <div class="description">
+    <p>1. Menerima perintah picking dari sistem (PDT).</p>
+    <p>2. Mengambil barang dari rak sesuai pesanan toko.</p>
+    <p>3. Memastikan jumlah dan kondisi barang sesuai (tidak rusak/kedaluwarsa).</p>
+    <p>4. Menata barang ke dalam container atau palet untuk dikirim.</p>
+    <p>5. Melaporkan selisih atau kerusakan ke atasan.</p>
+    <p>6. Menjaga kebersihan dan kerapihan area kerja.</p>
+  </div>
+  <div class="resignation">Mengundurkan diri</div>
+</div>
+
+<div class="company-card">
+  <div class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Logo_Mulia_Prima_Packindo.png" alt="PT Mulia Prima Packindo" style="width:64px" />
+  </div>
+  <h2 class="job-title">Mechanical Technician</h2>
+  <div class="company-name">PT Mulia Prima Packindo · Kontrak</div>
+  <div class="date">Agu 2018 - Jul 2019 · 1 thn</div>
+  <div class="location">Kedungwaringin, Cikarang Timur, Jawa Barat, Indonesia</div>
+  <div class="description">
+    <p>1. Membaca Gambar Teknik & Spesifikasi - Memahami gambar layout instalasi mesin, P&ID, dan manual pemasangan.</p>
+    <p>2. Persiapan Instalasi - Menyiapkan alat kerja, perlengkapan, dan komponen pendukung instalasi.</p>
+    <p>3. Pemasangan Komponen Mekanis - Merakit dan memasang bagian mesin: rangka, motor, gearbox, conveyor, dll.</p>
+    <p> - Melakukan alignment (penyelarasan) dan leveling mesin.</p>
+    <p>4. Koneksi Pipa & Saluran - Memasang pipa air, udara, oli, atau uap sesuai kebutuhan mesin.</p>
+    <p>5. Koordinasi dengan Tim Listrik & Tim Utility - Bekerja sama untuk sinkronisasi pemasangan kabel, sensor, dan panel.</p>
+    <p>6. Pengujian Awal (Pre-Commissioning) - Mengecek bagian mekanik untuk memastikan mesin siap diuji.</p>
+    <p>7. Perbaikan & Penyesuaian - Menyempurnakan instalasi jika ada ketidaksesuaian atau kendala teknis.</p>
+    <p>8. Dokumentasi & Laporan Pekerjaan - Membuat laporan harian atau mingguan progres pemasangan.</p>
+  </div>
+  </div>
+
+  </div>
+
+  <a href="biodata.html" class="nav-link back-link">← Kembali</a>
+  <a href="skill.html" class="nav-link next-link">Selanjutnya →</a>
+
+  <script>
+    function isInViewport(element) {
+      const rect = element.getBoundingClientRect();
+      return (
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.85
+      );
+    }
+
+    function showCardsOnScroll() {
+      const cards = document.querySelectorAll('.company-card');
+      cards.forEach(card => {
+        if (isInViewport(card)) {
+          card.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', showCardsOnScroll);
+    window.addEventListener('load', showCardsOnScroll);
+  </script>
+</body>
+</html>
